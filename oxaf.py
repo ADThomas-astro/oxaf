@@ -76,7 +76,7 @@ from __future__ import division, print_function
 import numpy as np  # Standard python numerical package
 
 # Global variables:
-__version__ = 2.0
+__version__ = 2.1
 E_norm_range = (0.01, 20)  # keV.  Spectra will be normalized over this range.
 output_range = (1e-4, 500) # keV   
 
@@ -620,7 +620,7 @@ def full_spectrum(E_peak, Gamma, p_NT):
     # Check the input parameters to ensure they're not outrageously wrong:
     if not (-5.0 <= E_peak <= 2.0):
         raise ValueError("E_peak must be between -5 and 2")
-    if not (1.0 <= Gamma <= 4.0):
+    if not (1.0 < Gamma <= 4.0):
         raise ValueError("Gamma must be between 1 and 4")
     if not (0.0 <= p_NT <= 1.0):
         raise ValueError("p_NT must be between 0 and 1")
